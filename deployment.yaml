@@ -37,3 +37,21 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: kevinkubernetes
+  name: kevinkubernetes
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32666
+    port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    run: kevinkubernetes
+  sessionAffinity: None
+  type: LoadBalancer
