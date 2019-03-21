@@ -55,3 +55,11 @@ spec:
     run: kevinkubernetes
   sessionAffinity: None
   type: LoadBalancer
+---
+apiVersion: v1
+data:
+  mysqlpassword.txt: dmVyeXNlY3JldHBhc3N3b3Jk
+kind: Secret
+metadata:
+  name: mysqlpassword
+type: Opaque
