@@ -23,7 +23,7 @@ spec:
         run: kevinkubernetes
     spec:
       containers:
-      - image: gcr.io/kuberneteskevin21/kubernetesworkshop21:cf11a54d224e3b12e5be6a6ef54047c2850c5ccf
+      - image: gcr.io/kuberneteskevin21/kubernetesworkshop21:{{ .sha }}
         imagePullPolicy: IfNotPresent
         name: kevinkubernetes
         ports:
